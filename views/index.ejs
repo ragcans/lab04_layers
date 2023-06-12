@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hop</title>
+
+    <!-- Materialize CSS and Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+    <!-- nav bar -->
+    <header>
+        <nav>
+            <div class="nav-wrapper blue darken-2">
+                <a href="/" style="padding-left: 10px;" class="brand-logo">IHOP</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+                    <li><a href="/visualizer"><i class="material-icons left">restaurant</i>Menu</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- main bit -->
+    <div class="container center-align">
+        <h1>Welcome to IHOP</h1>
+        <img src="/images/pamcmake.png" alt="cmat" width="300px">
+
+        <h2></h2>
+        <a class="btn" href="/visualizer">
+            <i class="material-icons right">arrow_forward</i> Start
+        </a>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- Auto-initialize Materialize elements (Note - more specific initialization may be required for certain elements)
+        Reference: https://materializecss.com/auto-init.html -->
+    <script src="/scripts/materializeAutoInit.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hop</title>
+
+    <!-- Materialize CSS and Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/stylesheets/visualizerStyle.css">
+</head>
+
+<body>
+    <!-- nav bar -->
+    <header>
+        <nav>
+            <div class="nav-wrapper blue darken-2">
+                <a href="/" style="padding-left: 10px;" class="brand-logo">IHOP</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+                    <li><a href="/visualizer"><i class="material-icons left">restaurant</i>Menu</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Order List -->
+    <div class="container">
+        <div class="section" id="list">
+            <h1>Your Order:</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i=0; i < menuorder.length; i++) { %>
+                        <tr>
+                            <td><%= menuorder[i].amount %></td>
+                            <td><%= menuorder[i].menu_name %></td>
+                            <td>$<%= menuorder[i].price %></td>
+                            <td>
+                                <a class="btn-small waves-effect waves-light" href="/visualizer/<%= menuorder[i].menu_id %>">
+                                    <i class="material-icons right">edit</i>
+                                    Edit
+                                </a>
+                                <a class="btn-small waves-effect waves-light red">
+                                    <i class="material-icons right">delete</i>
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Menu Container -->
+    <div class="container">
+        <h2>Menu</h2>
+        <div class="row">
+            <div class="col s12">
+                <!-- Menu Items -->
+                <div class="col s4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="images/chickensandwich.png">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Chicken Sandwich</span>
+                            <p>$8.43</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="images/pancake.png">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Pancakes</span>
+                            <p>$9.29</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="images/cocacola.png">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i 
+                                class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Coke</span>
+                            <p>$0.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="images/water.png">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i 
+                                class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Water</span>
+                            <p>$0.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="images/egg.png">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Omelette</span>
+                            <p>$13.37</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Auto-initialize Materialize elements (Note - more specific initialization may be required for certain elements)
+        Reference: https://materializecss.com/auto-init.html -->
+    <script src="/scripts/materializeAutoInit.js"></script>
+
+</body>
+</html>
